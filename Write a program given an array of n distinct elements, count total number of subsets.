@@ -1,0 +1,24 @@
+def count_subsets(array):
+  
+    n = len(array)
+    total_subsets = 2 ** n
+    return total_subsets
+
+def main():
+   
+    size = int(input("Enter array size: "))
+
+    if size < 0:
+        print("Invalid input")
+        return
+
+    if size == 0:
+        print("Number of subsets: 1")
+        return
+    print(f"Enter {size} elements separated by space:")
+    array = list(map(int, input().split()))
+    subsets_count = count_subsets(array)
+    print("Number of subsets:", subsets_count)
+
+if __name__ == "__main__":
+    main()
