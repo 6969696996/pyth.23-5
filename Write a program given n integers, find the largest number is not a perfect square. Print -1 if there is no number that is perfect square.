@@ -1,0 +1,26 @@
+import math
+
+def is_perfect_square(num):
+
+    sqrt_num = int(math.sqrt(num))
+    return sqrt_num * sqrt_num == num
+
+def largest_not_perfect_square(array):
+    max_not_square = -1
+    for num in array:
+        if not is_perfect_square(num):
+            max_not_square = max(max_not_square, num)
+    return max_not_square
+
+def main():
+  
+    arrays = [[16, 20, 25, 2, 3, 10], [36, 64, 10, 16, 29, 25]]
+
+    for array in arrays:
+        print("Array:", array)
+        result = largest_not_perfect_square(array)
+        print("Output:", result)
+        print()
+
+if __name__ == "__main__":
+    main()
