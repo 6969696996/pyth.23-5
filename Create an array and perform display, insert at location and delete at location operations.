@@ -1,0 +1,43 @@
+def display_list(elements):
+    print("The elements in the list are:", elements)
+
+def insert_at_position(elements, number, position):
+    """Function to insert a number at a specified position in the list"""
+    elements.insert(position, number)
+    return elements
+
+def delete_from_position(elements, position):
+
+    if 0 <= position < len(elements):
+        elements.pop(position)
+    else:
+        print("Invalid position")
+    return elements
+
+def main():
+    elements = []
+
+    n = int(input("Enter the number of elements: "))
+
+    for i in range(n):
+        number = float(input(f"Enter number {i + 1}: "))
+        elements.append(number)
+
+  
+    display_list(elements)
+
+    insert_number = float(input("Enter the number to insert: "))
+    insert_position = int(input("Enter the position to insert the number (0-indexed): "))
+    elements = insert_at_position(elements, insert_number, insert_position)
+
+    print("After insertion:")
+    display_list(elements)
+
+    delete_position = int(input("Enter the position to delete the number from (0-indexed): "))
+    elements = delete_from_position(elements, delete_position)
+
+    print("After deletion:")
+    display_list(elements)
+
+if __name__ == "__main__":
+    main()
