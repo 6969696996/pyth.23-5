@@ -1,0 +1,30 @@
+def move_zeros_to_end(array):
+    """Function to move all the 0's to the end of the array"""
+    n = len(array)
+    non_zero_index = 0
+    
+    for current_index in range(n):
+        if array[current_index] != 0:
+            array[non_zero_index] = array[current_index]
+            non_zero_index += 1
+    
+    for i in range(non_zero_index, n):
+        array[i] = 0
+
+def main():
+    """Main function to input array elements and move zeros to the end"""
+    size = int(input("Enter array size: "))
+
+    if size <= 0:
+        print("Invalid input")
+        return
+
+    print("Enter array elements separated by space:")
+    array = list(map(int, input().split()))
+
+    move_zeros_to_end(array)
+
+    print("Modified array:", ' '.join(map(str, array)))
+
+if __name__ == "__main__":
+    main()
