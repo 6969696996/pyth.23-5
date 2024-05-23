@@ -1,0 +1,23 @@
+def search_element(array, target):
+    try:
+        return array.index(target)
+    except ValueError:
+        return -1
+
+def main():
+    array = []
+    n = int(input("Enter the number of elements: "))
+
+    for i in range(n):
+        array.append(input(f"Enter element {i + 1}: "))
+
+    target = input("Enter the element to search for: ")
+    position = search_element(array, target)
+
+    if position != -1:
+        print(f"The element '{target}' is found at position {position + 1}.")
+    else:
+        print(f"The element '{target}' is not found.")
+
+if __name__ == "__main__":
+    main()
