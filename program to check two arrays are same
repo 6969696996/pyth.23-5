@@ -1,0 +1,32 @@
+def check_arrays_equal(array1, array2):
+    if len(array1) != len(array2):
+        return False
+    
+    for i in range(len(array1)):
+        if array1[i] != array2[i]:
+            return False
+    
+    return True
+
+def main():
+        n = int(input("Enter how many values you want to read: "))
+
+
+    array1 = []
+    array2 = []
+
+    print("Enter elements for array1:")
+    for i in range(n):
+        value = int(input(f"Enter the value of a[{i}]: "))
+        array1.append(value)
+    print("Enter elements for array2:")
+    for i in range(n):
+        value = int(input(f"Enter the value of b[{i}]: "))
+        array2.append(value)
+    if check_arrays_equal(array1, array2):
+        print("Both arrays are equal")
+    else:
+        print("Both arrays are not equal")
+
+if __name__ == "__main__":
+    main()
