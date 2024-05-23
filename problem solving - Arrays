@@ -1,0 +1,19 @@
+def find_repetitive_element(array):
+    seen = set()
+    for num in array:
+        if num in seen:
+            return num
+        seen.add(num)
+
+def main():
+    arrays = [[1, 3, 2, 3, 4], [1, 5, 1, 2, 3, 4]]
+
+    for array in arrays:
+        print("Array:", array)
+        result = find_repetitive_element(array)
+        print("Repetitive element:", result)
+        print()
+
+if __name__ == "__main__":
+    main()
+
